@@ -14,7 +14,7 @@
     :target: https://readthedocs.org/projects/django-cloudflare/
     :alt: Docs
 
-.. image:: https://codecov.io/gh/tomwojcik/django-cloudflare/branch/master/graph/badge.svg
+.. image:: https://codecov.io/gh/tomwojcik/django-cloudflare/branch/main/graph/badge.svg?token=EqGaK4KxNp
     :target: https://codecov.io/gh/tomwojcik/django-cloudflare
     :alt: codecov
 

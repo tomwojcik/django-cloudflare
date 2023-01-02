@@ -20,7 +20,7 @@ If enabled, the value of ``Cdn-Loop`` header will be set on the request object.
 Default: ``cf_cdn_loop``
 
 
-Allows you to define the attribute name that will allow you to access the previous value on the request object.
+Allows you to define the attribute name that will allow you to access the ``Cdn-Loop`` header value from the request object.
 
 Example::
 
@@ -41,7 +41,7 @@ If enabled, the value of ``Cf-Connecting-Ip`` header will be set on the request 
 Default: ``cf_ip``
 
 
-Allows you to define the attribute name that will allow you to access the previous value on the request object.
+Allows you to define the attribute name that will allow you to access the ``Cf-Connecting-Ip`` header value from the request object.
 
 Example::
 
@@ -62,7 +62,7 @@ If enabled, the value of ``Cf-Ipcountry`` header will be set on the request obje
 Default: ``cf_country``
 
 
-Allows you to define the attribute name that will allow you to access the previous value on the request object.
+Allows you to define the attribute name that will allow you to access the ``Cf-Ipcountry`` header value from the request object.
 
 Example::
 
@@ -83,7 +83,7 @@ If enabled, the value of ``Cf-Ray`` header will be set on the request object.
 Default: ``cf_ray``
 
 
-Allows you to define the attribute name that will allow you to access the previous value on the request object.
+Allows you to define the attribute name that will allow you to access the ``Cf-Ray`` header value from the request object.
 
 Example::
 
@@ -104,7 +104,7 @@ If enabled, the value of ``Cf-Warp-Tag-Id`` header will be set on the request ob
 Default: ``cf_warp_tag``
 
 
-Allows you to define the attribute name that will allow you to access the previous value on the request object.
+Allows you to define the attribute name that will allow you to access the ``Cf-Warp-Tag-Id`` header value from the request object.
 
 Example::
 
