@@ -1,7 +1,14 @@
-import enum
+try:
+    # see https://tomwojcik.com/posts/2023-01-02/python-311-str-enum-breaking-change/  # noqa: E501
+    from enum import StrEnum
+except ImportError:  # pragma: no cover
+    from enum import Enum  # pragma: no cover
+
+    class StrEnum(str, Enum):  # pragma: no cover
+        pass  # pragma: no cover
 
 
-class DjangoCloudflareHeader(str, enum.Enum):
+class DjangoCloudflareHeader(StrEnum):
     cdn_loop = "Cdn-Loop"
     ip = "Cf-Connecting-Ip"
     country = "Cf-Ipcountry"
@@ -9,7 +16,7 @@ class DjangoCloudflareHeader(str, enum.Enum):
     warp_tag = "Cf-Warp-Tag-Id"
 
 
-class DjangoCloudflareDefaultAttr(str, enum.Enum):
+class DjangoCloudflareDefaultAttr(StrEnum):
     cf_cdn_loop = "cf_cdn_loop"
     cf_ip = "cf_ip"
     cf_country = "cf_country"

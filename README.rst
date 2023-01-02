@@ -11,7 +11,7 @@
     :alt: Latest Version
 
 .. image:: https://readthedocs.org/projects/django-cloudflare/badge/?version=latest
-    :target: https://readthedocs.org/projects/django-cloudflare/
+    :target: https://django-cloudflare.readthedocs.io/en/latest/
     :alt: Docs
 
 .. image:: https://codecov.io/gh/tomwojcik/django-cloudflare/branch/main/graph/badge.svg?token=EqGaK4KxNp
