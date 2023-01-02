@@ -1,0 +1,80 @@
+[tool.poetry]
+name = 'django-cloudflare'
+version = "v0.0.1"
+description = 'A middleware for Django applications using Cloudflare as a proxy. Allows you to extract and access CF headers.'
+authors = [
+    'Tom Wojcik <django-cloudflare-pkg@tomwojcik.com>'
+]
+license = 'MIT'
+classifiers = [
+    'Development Status :: 3 - Alpha',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Intended Audience :: Developers',
+    'Intended Audience :: Information Technology',
+    'Intended Audience :: System Administrators',
+    'License :: OSI Approved :: MIT License',
+    'Topic :: Internet',
+]
+readme = "README.rst"
+homepage = "https://github.com/tomwojcik/django-cloudflare"
+repository = "https://github.com/tomwojcik/django-cloudflare"
+keywords = ["django", "cloudflare"]
+documentation = "https://django-cloudflare.readthedocs.io/"
+packages = [
+    { include = "django_cloudflare" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.8.0"
+django = "^4.1.5"
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.12.0"
+isort = "^5.11.4"
+flake8 = "^5.0.4"
+bandit = "^1.7.4"
+safety = "^2.3.5"
+sphinx = "^4.3.2"
+sphinx-rtd-theme = "^1.1.1"
+coverage = "^7.0.1"
+pre-commit = "^2.21.0"
+pre-commit-hooks = "^4.4.0"
+
+[build-system]
+requires = ["poetry-core>=1.2.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 79
+target-version = ['py37', 'py38']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  # The following are specific to Black, you probably don't want those.
+  | blib2to3
+  | tests/data
+  | profiling
+)/
+'''
+experimental_string_processing = true
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+line_length = 79
+force_grid_wrap = 0
+use_parentheses = true
+profile = "black"
+force_single_line = true
