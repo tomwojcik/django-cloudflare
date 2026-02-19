@@ -1,8 +1,6 @@
-import sys
-
-if sys.version_info >= (3, 11):
+try:
     from enum import StrEnum
-else:  # pragma: no cover
+except ImportError:  # pragma: no cover – Python 3.10
     from enum import Enum
 
     class StrEnum(str, Enum):
