@@ -1,0 +1,16 @@
+site_name: django-cloudflare
+site_url: https://django-cloudflare.readthedocs.io/
+site_description: A reusable Django middleware that allows you to easily extract Cloudflare headers.
+site_author: Tom Wojcik
+
+repo_name: tomwojcik/django-cloudflare
+repo_url: https://github.com/tomwojcik/django-cloudflare
+
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - Quickstart: quickstart.md
+  - Settings: settings.md
+  - Changelog: changelog.md

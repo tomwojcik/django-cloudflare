@@ -1,85 +1,66 @@
-[tool.poetry]
-name = 'django-cloudflare'
-version = "v0.0.1"
-description = 'A middleware for Django applications using Cloudflare as a proxy. Allows you to extract and access CF headers.'
+[project]
+name = "django-cloudflare"
+version = "1.0.0"
+description = "A middleware for Django applications using Cloudflare as a proxy. Allows you to extract and access CF headers."
 authors = [
-    'Tom Wojcik <django-cloudflare-pkg@tomwojcik.com>'
+    { name = "Tom Wojcik", email = "django-cloudflare-pkg@tomwojcik.com" },
 ]
-license = 'MIT'
-classifiers = [
-    'Development Status :: 3 - Alpha',
-    'Programming Language :: Python :: 3.8',
-    'Programming Language :: Python :: 3.9',
-    'Programming Language :: Python :: 3.10',
-    'Programming Language :: Python :: 3.11',
-    'Intended Audience :: Developers',
-    'Intended Audience :: Information Technology',
-    'Intended Audience :: System Administrators',
-    'License :: OSI Approved :: MIT License',
-    'Topic :: Internet',
-]
-readme = "README.rst"
-homepage = "https://github.com/tomwojcik/django-cloudflare"
-repository = "https://github.com/tomwojcik/django-cloudflare"
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"
 keywords = ["django", "cloudflare"]
-documentation = "https://django-cloudflare.readthedocs.io/"
-packages = [
-    { include = "django_cloudflare" },
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Framework :: Django",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.1",
+    "Framework :: Django :: 5.2",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Internet",
+]
+dependencies = [
+    "django>=4.2",
 ]
 
-[tool.poetry.dependencies]
-python = "^3.8.0"
-django = "^4.1.5"
+[project.urls]
+Homepage = "https://github.com/tomwojcik/django-cloudflare"
+Repository = "https://github.com/tomwojcik/django-cloudflare"
+Documentation = "https://django-cloudflare.readthedocs.io/"
+Issues = "https://github.com/tomwojcik/django-cloudflare/issues"
 
-[tool.poetry.group.dev.dependencies]
-black = "^22.12.0"
-isort = "^5.11.4"
-flake8 = "^5.0.4"
-bandit = "^1.7.4"
-safety = "^2.3.5"
-coverage = "^7.0.1"
-pre-commit = "^2.21.0"
-pre-commit-hooks = "^4.4.0"
-
-
-
-[tool.poetry.group.docs.dependencies]
-sphinx = "5.3.0"
-sphinx-rtd-theme = "^1.1.1"
+[dependency-groups]
+dev = [
+    "ruff>=0.9",
+    "pytest>=8",
+    "pytest-django>=4.9",
+    "pytest-asyncio>=0.25",
+    "pytest-cov>=6",
+    "pre-commit>=4",
+]
+docs = [
+    "mkdocs-material>=9",
+]
 
 [build-system]
-requires = ["poetry-core>=1.2.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.black]
+[tool.ruff]
 line-length = 79
-target-version = ['py37', 'py38']
-include = '\.pyi?$'
-exclude = '''
-/(
-    \.eggs
-  | \.git
-  | \.hg
-  | \.mypy_cache
-  | \.tox
-  | \.venv
-  | _build
-  | buck-out
-  | build
-  | dist
-  # The following are specific to Black, you probably don't want those.
-  | blib2to3
-  | tests/data
-  | profiling
-)/
-'''
-experimental_string_processing = true
+target-version = "py310"
 
-[tool.isort]
-multi_line_output = 3
-include_trailing_comma = true
-line_length = 79
-force_grid_wrap = 0
-use_parentheses = true
-profile = "black"
-force_single_line = true
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "testproject.settings"
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "--cov=django_cloudflare --cov-report=term-missing --cov-fail-under=100"
