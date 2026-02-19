@@ -1,4 +1,4 @@
-[![Build Status](https://github.com/tomwojcik/django-cloudflare/workflows/Tests/badge.svg)](https://github.com/tomwojcik/django-cloudflare/actions?query=branch%3Amain+workflow%3ATests)
+[![Build Status](https://github.com/tomwojcik/django-cloudflare/workflows/CI/badge.svg)](https://github.com/tomwojcik/django-cloudflare/actions/workflows/ci.yml)
 [![Python Versions](https://img.shields.io/pypi/pyversions/django-cloudflare.svg)](https://pypi.org/project/django-cloudflare/)
 [![Latest Version](https://img.shields.io/pypi/v/django-cloudflare.svg)](https://pypi.org/project/django-cloudflare/)
 [![Docs](https://readthedocs.org/projects/django-cloudflare/badge/?version=latest)](https://django-cloudflare.readthedocs.io/en/latest/)
